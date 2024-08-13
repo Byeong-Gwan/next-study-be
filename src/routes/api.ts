@@ -14,16 +14,16 @@ const db = new Database(dbPath, (err) => {
 });
 
 
-// router.get('/members', (req, res) => {
-//   db.all('SELECT * FROM members', (err, rows) => {
-//     if (err) {
-//       res.status(500).send({ error: '데이터베이스 조회 오류' });
-//     } else {
-//       console.log('rows1111111111',rows);
-//       res.send(rows);
-//     }
-//   });
-// });
+router.get('/members', (req, res) => {
+  db.all('SELECT * FROM members', (err, rows) => {
+    if (err) {
+      res.status(500).send({ error: '데이터베이스 조회 오류' });
+    } else {
+      console.log('rows1111111111',rows);
+      res.send(rows);
+    }
+  });
+});
 // 멤버 데이터를 반환하는 라우터 (검색 및 기본 조회)
 router.get('/members', (req, res) => {
   const { query = '', page = '1', itemsPerPage = '5' } = req.query;
