@@ -1,3 +1,10 @@
+/**
+ * @file src.routers.api.ts
+ * @author 김병관
+ * @since 2024.08.10
+ * @desc next js (tea time members 조회) API
+ */
+
 import express, { Request, Response } from 'express';
 import { Database } from 'sqlite3';
 import path from 'path';
