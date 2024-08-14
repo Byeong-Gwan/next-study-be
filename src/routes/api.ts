@@ -19,7 +19,7 @@ const db = new Database(dbPath, (err) => {
 router.get('/members', (req: Request, res: Response) => {
   const query = typeof req.query.query === 'string' ? req.query.query : '';
   const page = typeof req.query.page === 'string' ? req.query.page : '1';
-  const itemsPerPage = typeof req.query.itemsPerPage === 'string' ? req.query.itemsPerPage : '10';
+  const itemsPerPage = typeof req.query.itemsPerPage === 'string' ? req.query.itemsPerPage : '5';
 
   const currentPage = parseInt(page, 10);
   const limit = parseInt(itemsPerPage, 10);
